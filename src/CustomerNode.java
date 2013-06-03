@@ -81,7 +81,7 @@ public class CustomerNode extends LinkedList{
 			CustomerNode aCustomerNode = new CustomerNode();
 			Customer temp;
 			temp = new Customer();
-			temp.setCustomerNumber(885);
+			temp.setCustomerNumber(85);
 			aCustomerNode.Join(temp);
 			
 			temp = new Customer();
@@ -89,7 +89,7 @@ public class CustomerNode extends LinkedList{
 			aCustomerNode.Join(temp);
 			
 			temp = new Customer();
-			temp.setCustomerNumber(257);
+			temp.setCustomerNumber(957);
 			aCustomerNode.Join(temp);
 			
 			System.out.println(aCustomerNode.traverseList());

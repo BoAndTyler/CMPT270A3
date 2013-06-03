@@ -90,8 +90,6 @@ public class EventNode extends OrdDllist{
 		 EventNode testEventNode = new EventNode();
 		 Event tempEvent;
 		 tempEvent = new Event("getting up", 225);
-		 System.out.println("event1 made.");
-		 System.out.println(tempEvent.getEventType()+", "+tempEvent.getClockTime());
 		 
 		 testEventNode.eventInsert(tempEvent);
 
