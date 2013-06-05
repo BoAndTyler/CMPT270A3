@@ -8,7 +8,6 @@ public class EventNode extends OrdDllist{
 	EventNode nextDlist;
 //	boolean amEmpty;
 	
-	
 	 public EventNode() {
 	        super();
 	        amEmpty = true;
@@ -27,6 +26,11 @@ public class EventNode extends OrdDllist{
 		    }
 		    return this.info.getClockTime()+"-"+this.info.getEventType()+"\n"+this.nextDlist.traverseList();
 		}
+	 
+	 /**
+	  * Outputs the events list from the first event in order to the console.
+	  * @return the list of events in order from the first event
+	  */
 	 public String traverseListFromStart() {
 		 	if (!this.prevDlist.isEmpty())
 		 		return this.prevDlist.traverseListFromStart();
@@ -40,6 +44,11 @@ public class EventNode extends OrdDllist{
 		    return this.info.getClockTime()+"-"+this.info.getEventType()+"\n"+this.nextDlist.traverseList();
 		}
 	 
+	 /**
+	  * Inserts the event into the event list based on its clock time.
+	  * @param inEvent the event to be inserted into the list
+	  * @return The location of where the event was inserted into the list.
+	  */
 	 public EventNode eventInsert(Event inEvent) {
 	        if (this.isEmpty()) {
 	            info = inEvent;
@@ -84,6 +93,8 @@ public class EventNode extends OrdDllist{
 	        return(this);
 	                
 	    }
+	 
+	 
 	 public static void main(String[] args) {
 		 
 		 System.out.println("test start");
@@ -101,7 +112,6 @@ public class EventNode extends OrdDllist{
 
 		 tempEvent = new Event("take cloth on", 250);
 		 testEventNode.eventInsert(tempEvent);
-// that is a change only for test the github.
 
 		 
 		 System.out.println(testEventNode.traverseListFromStart());
