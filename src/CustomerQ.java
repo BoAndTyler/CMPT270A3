@@ -1,25 +1,33 @@
-
-public class CustomerQ {
+/**
+ * 
+ * @author Bo Dong and Tyler Spink
+ *
+ */
+public class CustomerQ 
+{
 	CustomerNode head= null;
 	int length = 0;
 	int maxlength = 0;
 	CustomerQ nextCustomerQ = null;
 	
-	
-	
 	/**
 	 * Adds a new customer to the end of the queue.
 	 * @param inInfo the new customer to be added to the queue
 	 */
-	public void join(Customer inInfo){
-		if (head == null) {//check if head is empty?
-			CustomerNode tempCustomerNode = new CustomerNode();//if empty, build a new.
+	public void join(Customer inInfo)
+	{
+		if (head == null)	//check if head is empty? 
+		{
+			CustomerNode tempCustomerNode = new CustomerNode();	//if empty, build a new.
 			head = tempCustomerNode;
 		}
+		
 		//insert customer inInfo into the queue.
 		head.Join(inInfo);
 		length = length+1;
-		if (length>maxlength) {//add the queue length.
+		
+		if (length>maxlength)	//add the queue length. 
+		{
 			maxlength = length;
 		}
 	}
@@ -29,12 +37,17 @@ public class CustomerQ {
 	 * @param outInfo the customer to be removed from the start of the queue
 	 * @return the first customer in the queue or nothing if it is empty.
 	 */
-	public Customer leave(Customer outInfo){
-		if (length>0) {
+	public Customer leave(Customer outInfo)
+	{
+		if (length>0) 
+		{
 			length = length -1;
 			return head.Leave();
-		}else{
-		return null;
+		}
+		else
+		{
+			System.out.println("the Queue is empty!");
+			return null;
 		}
 	}
 	
@@ -53,6 +66,4 @@ public class CustomerQ {
 	public int getMaxLength(){
 		return maxlength;
 	}
-	
-	
 }

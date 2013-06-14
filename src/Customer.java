@@ -1,9 +1,15 @@
-
-public class Customer {
+/**
+ * 
+ * @author Bo Dong and Tyler Spink
+ *
+ */
+public class Customer 
+{
 	private int timeJoindQueue = 0;
 	private int timeToWindow = 0;
 	private int timeToLeave = 0;
 	private int customerNumber = 0;
+	int customerWaitingTime = 0;
 	
 	/**
 	 * Sets the time that a new group of customers join the queue.
@@ -68,5 +74,4 @@ public class Customer {
 	public int getNum() {
 		return customerNumber;
 	}
-	
 }
