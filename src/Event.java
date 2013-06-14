@@ -1,5 +1,8 @@
-
-
+/**
+ * 
+ * @author Bo Dong and Tyler Spink
+ *
+ */
 public class Event {
 	String eventType = null;
 	int eventClockTime = 0;
@@ -8,13 +11,17 @@ public class Event {
 		eventType = null;
 		eventClockTime = 0;
 	}
+	
 	//The constructor with parameters
 	Event(String inType,int inClockTime){
 		eventType = inType;
 		eventClockTime = inClockTime;
 	}
 
-// do not need this now.	
+/**
+ * This method is not needed as its functionality has 
+ * been replaced by the classes Window and DoorKeeper
+ */
 //	public Event generateNextEvent(){
 //		return new Event();
 //	}
@@ -34,13 +41,23 @@ public class Event {
 	public int getClockTime() {
 		return eventClockTime;
 	}
-//	public String getPrintTime(int inTime){
-//		int Hour;
-//		int Minute;
-//		int Second;
-//		Hour = inTime/3600;
-//		Minute = (inTime - Hour*3600)/60;
-//		Second = inTime - Hour*3600 - Minute*60;
-//		return Hour+":"+Minute+":"+Second;
-//	}
+	
+	/**
+	 * Converts the clock time from seconds into hours, minutes, and seconds.
+	 * @return A string containing the time formated by hours:minutes:seconds.
+	 */
+	public String getPrintTime()
+	{
+		int Hour;
+		int Minute;
+		int Second;
+		
+		int inTime = getClockTime();
+		
+		Hour = inTime/3600;
+		Minute = (inTime - Hour*3600)/60;
+		Second = inTime - Hour*3600 - Minute*60;
+		
+		return Hour+":"+Minute+":"+Second;
+	}
 }
